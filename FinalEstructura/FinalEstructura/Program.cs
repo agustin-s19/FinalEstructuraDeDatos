@@ -160,11 +160,10 @@ namespace Prueba_Final
 
                 if (valor > 0 && valor < 999)
                 {
-
                     int indice = cola.Count + 1;
-                    string pedido = indice + " – " + valor;
+                    string pedido = valor.ToString(); //indice + " – " + valor;
                     cola.Enqueue(pedido);
-                    Console.WriteLine("\nEl pedido '{0}' se agrego exitosamente.", pedido);
+                    Console.WriteLine("\nEl pedido '{0}' se agrego exitosamente.", string.Format("{0} - {1}", cola.ToArray().ToList().IndexOf(pedido) + 1, pedido));
                     Console.WriteLine("\nPresione cualquier tecla para continuar...");
                     Console.ReadKey();
                 }
@@ -215,7 +214,7 @@ namespace Prueba_Final
                 Console.WriteLine("\nLista completa de pedidos: \n");
                 foreach (string dato in cola)
                 {
-                    Console.WriteLine("{0}", dato);
+                    Console.WriteLine(string.Format("{0} - {1}", cola.ToArray().ToList().IndexOf(dato) + 1, dato));
                 }
             }
 
@@ -234,15 +233,15 @@ namespace Prueba_Final
             int i = 0;
             if (cola.Count != 0)
             {
-
-                foreach (string dato in cola)
-                {
-                    i++;
-                    if (cola.Count == i)
-                    {
-                        mensaje("\nEl último pedido es: \n" + "    " + dato); ;
-                    }
-                }
+                mensaje("\nEl último pedido es: \n" + "    " + cola.ToArray().Last());
+                //foreach (string dato in cola)
+                //{
+                //    i++;
+                //    if (cola.Count == i)
+                //    {
+                //        mensaje("\nEl último pedido es: \n" + "    " + dato); ;
+                //    }
+                //}
             }
             else
             {
@@ -259,8 +258,8 @@ namespace Prueba_Final
             try
             {
 
-
-                mensaje("\nEl primer pedido es: \n " + "    " + cola.Peek());
+                mensaje("\nEl primer pedido es: \n " + "    " + cola.ToArray().First());
+                //mensaje("\nEl primer pedido es: \n " + "    " + cola.Peek());
 
 
             }
