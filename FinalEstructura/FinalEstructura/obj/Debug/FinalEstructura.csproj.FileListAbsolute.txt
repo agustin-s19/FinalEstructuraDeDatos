@@ -10,3 +10,10 @@ C:\Users\Agustin\Desktop\Final Estructura de Datos\FinalEstructura\FinalEstructu
 C:\Users\Agustin\Desktop\Final Estructura de Datos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.exe
 C:\Users\Agustin\Desktop\Final Estructura de Datos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.pdb
 C:\Users\Agustin\Desktop\Final Estructura de Datos\FinalEstructura\FinalEstructura\bin\Debug\FinalEstructura.pdb
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\bin\Debug\FinalEstructura.exe.config
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\bin\Debug\FinalEstructura.exe
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\bin\Debug\FinalEstructura.pdb
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.csprojAssemblyReference.cache
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.csproj.CoreCompileInputs.cache
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.exe
+C:\Users\Agus\Desktop\Santoro\FinalEstructuraDeDatos\FinalEstructura\FinalEstructura\obj\Debug\FinalEstructura.pdb

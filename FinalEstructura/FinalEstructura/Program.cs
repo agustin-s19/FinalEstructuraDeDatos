@@ -52,7 +52,7 @@ namespace Prueba_Final
                         MoverPrimerPedido(ref miCola);
                         break;
                     case 10: //Guia para el usuario que dice las funciones que tiene el programa
-                        GuiaDelPrograma();
+                        PedirNumero( ref miCola);
                         break;
                     case 11: break; // Salir del programa con el número 11
 
@@ -80,7 +80,7 @@ namespace Prueba_Final
             Console.WriteLine("                Alumno             ...............................           Agustin Sabia          ");
             Console.WriteLine("...................................Tema 2 - 1er Año B - 29/11/2019...................................");
 
-            Console.WriteLine(" \n 1) Crear Cola \n 2) Borrar Cola \n 3) Agregar Pedido \n 4) Borrar Pedido \n 5) Listar Todos los Pedidos \n 6) Listar Último Pedido \n 7) Listar Primer Pedido \n 8) Cantidad De Pedido \n 9) Mover hacia la ultima posicion el primer Pedido \n 10) Guia del Programa \n 11) Salir");
+            Console.WriteLine(" \n 1) Crear Cola \n 2) Borrar Cola \n 3) Agregar Pedido \n 4) Borrar Pedido \n 5) Listar Todos los Pedidos \n 6) Listar Último Pedido \n 7) Listar Primer Pedido \n 8) Cantidad De Pedido \n 9) Mover hacia la ultima posicion el primer Pedido \n 10) Conocer que numero es dependiendo de su índice \n 11) Salir");
             Console.Write("\nIngresa tu opción: ");
 
             do
@@ -161,7 +161,7 @@ namespace Prueba_Final
                 if (valor > 0 && valor < 999)
                 {
                     int indice = cola.Count + 1;
-                    string pedido = valor.ToString(); //indice + " – " + valor;
+                    string pedido = valor.ToString(); 
                     cola.Enqueue(pedido);
                     Console.WriteLine("\nEl pedido '{0}' se agrego exitosamente.", string.Format("{0} - {1}", cola.ToArray().ToList().IndexOf(pedido) + 1, pedido));
                     Console.WriteLine("\nPresione cualquier tecla para continuar...");
@@ -230,24 +230,19 @@ namespace Prueba_Final
         /////////////////////////// LISTAR ULTIMO PEDIDO - OPCION 6 //////////////////////////////////////////////
         static void ListarUltimoPedido(Queue cola)
         {
-            int i = 0;
+
             if (cola.Count != 0)
             {
-                mensaje("\nEl último pedido es: \n" + "    " + cola.ToArray().Last());
-                //foreach (string dato in cola)
-                //{
-                //    i++;
-                //    if (cola.Count == i)
-                //    {
-                //        mensaje("\nEl último pedido es: \n" + "    " + dato); ;
-                //    }
-                //}
-            }
-            else
-            {
-                mensaje("\nError: La cola esta vacía");
-            }
-
+                Console.WriteLine("\nEl último pedido es: \n");
+                Console.WriteLine("{0} - {1} ", cola.ToArray().ToList().IndexOf(cola.ToArray().Last()) + 1, cola.ToArray().Last());
+                mensaje(" ");
+                   
+                }
+                else
+                {
+                    mensaje("\nError: La cola esta vacía");
+                }
+            
             Console.ReadKey();
 
         }
@@ -258,8 +253,12 @@ namespace Prueba_Final
             try
             {
 
-                mensaje("\nEl primer pedido es: \n " + "    " + cola.ToArray().First());
-                //mensaje("\nEl primer pedido es: \n " + "    " + cola.Peek());
+
+
+                Console.WriteLine("\nEl primer pedido es: \n ");
+
+                Console.WriteLine ("{0} - {1} ", cola.ToArray().ToList().IndexOf(cola) + 2, cola.ToArray().First());
+                mensaje(" ");
 
 
             }
@@ -294,6 +293,7 @@ namespace Prueba_Final
         {
             try
             {
+
                 string valor = (string)cola.Dequeue();
                 Console.WriteLine("\nEl primer pedido era:{0} ", valor);
                 cola.Enqueue(valor);
@@ -310,15 +310,43 @@ namespace Prueba_Final
 
 
         /////////////////////////// GUIA DEL PROGRAMA - OPCION 10 //////////////////////////////////////////////////
-        static void GuiaDelPrograma()
+        static void PedirNumero(ref Queue cola)
         {
-            Console.WriteLine("\n ______________________________________________________________");
-            Console.WriteLine(" |                                                             |");
-            Console.WriteLine(" | Para usar el programa debera introducir una opcion del menú |");
-            Console.WriteLine(" | Con el mismo podrá Crear, borrar Colas, como tambien  ______|");
-            Console.WriteLine(" | ver, modificar, contar, listar el contenido de ella. |");
-            Console.WriteLine(" |_____________________________________________________/");
-            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            
+                if (cola.Count != 0)
+                {
+                try
+                {
+
+
+                    Console.Write("\nIngrese un numero para saber que pedido se encuentra en dicho índice: ");
+                    int valor = Convert.ToInt32(Console.ReadLine());
+                    int valor2 = cola.ToArray().ToList().IndexOf(valor);
+
+
+                    if (valor > cola.ToArray().ToList().Count - 1 || cola.ToArray().ToList().IndexOf(valor) < 1)
+                    {
+                        Console.WriteLine("\nEl numero que se encuentra en dicho índice es {0}.", cola.ToArray().ToList()[valor - 1]);
+
+                       
+                    }
+                }
+                catch
+                {
+
+                    Console.WriteLine("\nNo se han encontrado resultados.");
+
+                    Console.WriteLine("\nVerifique los datos ingresados");
+                   
+                }
+
+            }
+
+            else
+            {
+                Console.WriteLine("\nError: La cola esta esta vacía.");
+            }
+            mensaje(" ");
             Console.ReadKey();
         }
 
